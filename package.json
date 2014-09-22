@@ -1,0 +1,16 @@
+{
+  "name": "nodejs-protobuf-benchmark",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lukas Drbal <lukas.drbal@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "protobufjs": "~3.6.0",
+    "microtime": "~1.0.1",
+    "node-protobuf": "~1.2.1"
+  }
+}

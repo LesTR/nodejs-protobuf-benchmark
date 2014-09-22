@@ -1,0 +1,147 @@
+
+ä
+tweet.proto"¤
+Tweet
+
+id (
+in_reply_to_status_id (
+in_reply_to_user_id (
+in_reply_to_screen_name (	
+
+created_at (
+text (	
+source (	
+	truncated (
+user_id	 ('
+coordinates (2.Tweet.Coordinates
+place (2.Tweet.Places)
+contributors (2.Tweet.Contributors
+retweet_count (!
+entities (2.Tweet.Entities
+	favorited (
+	retweeted (2
+extended_entities (2.Tweet.ExtendedEntities
+possibly_sensitive (
+scopes (	
+withheld_copyright (9
+withheld_in_countries (2.Tweet.WithheldInCountries
+withheld_scope (	
+retweeted_user_id (
+retweeted_status_id (.
+sbks_interested (2.Tweet.SbksInterested
+sbks_source (	
+sbks_updated_tms (
+sbks_replied  (
+sbks_reply_count! (
+sbks_retweeted" (
+sbks_retweet_count# (
+lang$ (	
+sbks_download_tms% (
+favorite_count& (¬
+Media
+
+id (
+display_url (	
+expanded_url (	
+indices (
+	media_url (	
+media_url_https (	!
+sizes (2.Tweet.Media.Sizes
+source_status_id (
+type	 (	
+url
+ (	Ö
+Sizes&
+thumb (2.Tweet.Media.Sizes.Size&
+large (2.Tweet.Media.Sizes.Size'
+medium (2.Tweet.Media.Sizes.Size&
+small (2.Tweet.Media.Sizes.Size,
+Size	
+h (	
+w (
+resize (	Ö
+Entities*
+hashtags (2.Tweet.Entities.Hashtags
+media (2.Tweet.Media!
+urls (2.Tweet.Entities.Url2
+user_mentions (2.Tweet.Entities.UserMention(
+symbols (2.Tweet.Entities.Symbols)
+Hashtags
+indices (
+text (	\
+Url
+display_url (	
+expanded_url (	
+indices (
+url (	
+type (	M
+UserMention
+
+id (
+indices (
+name (	
+screen_name (	(
+Symbols
+indices (
+text (	/
+ExtendedEntities
+media (2.Tweet.Media0
+Coordinates
+coordinates (
+type (	ò
+Places,
+
+attributes (2.Tweet.Places.Attributes/
+bounding_box (2.Tweet.Places.BoundindBox
+country (	
+country_code (	
+	full_name (	
+
+id (	
+name (	
+
+place_type (	
+url	 (	
+contained_within
+ (	–
+
+Attributes
+street_address (	
+locality (	
+region (	
+iso3 (	
+postal_code (	
+phone (	
+twitter (	
+url (	à
+BoundindBox:
+coordinates (2%.Tweet.Places.BoundindBox.FloatArray2
+type (	†
+FloatArray2Q
+array_of_array_of_float (20.Tweet.Places.BoundindBox.FloatArray2.FloatArray$
+
+FloatArray
+array_of_float (.
+Contributor
+
+id (
+screen_name (	8
+Contributors(
+contributors (2.Tweet.Contributorþ
+SbksInterested
+tweet (
+question (
+message_to_user (
+question_to_user (
+reply (
+answer (
+retweet (
+mention (
+message_for_me	 (
+question_for_me
+ (
+reply_for_me (
+response (4
+WithheldInCountries
+withheld_in_countries (	B.
+com.socialbakers.twitterBProtobufTweetH 

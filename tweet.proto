@@ -1,0 +1,173 @@
+option java_package = "com.socialbakers.twitter";
+option java_outer_classname = "ProtobufTweet";
+option java_generate_equals_and_hash = true;
+option optimize_for = SPEED;
+
+
+// see: https://dev.twitter.com/docs/platform-objects/tweets
+message Tweet {
+
+	message Media {
+		message Sizes {
+			message Size {
+				required uint32 h = 1;
+				required uint32 w = 2;
+				required string resize = 3;
+			}
+			required Size thumb = 1;
+			required Size large = 2;
+			required Size medium = 3;
+			required Size small = 4;
+		}
+		required uint64 id = 1;
+		optional string display_url = 2;
+		optional string expanded_url = 3;
+		repeated uint32 indices = 4;
+		optional string media_url = 5;
+		optional string media_url_https = 6;
+		optional Sizes sizes = 7;
+		optional uint64 source_status_id = 8;
+		required string type = 9;
+		optional string url = 10;
+	}
+
+	// see: https://dev.twitter.com/docs/platform-objects/entities
+	message Entities {
+		message Hashtags {
+			repeated uint32 indices = 1;
+			required string text = 2;
+		}
+		message Url {
+			required string display_url = 1;
+			optional string expanded_url = 2; //tweet without expanded_url http://api.ccl/0/twitter/tweets?ids=24073791078&x-method=post
+			repeated uint32 indices = 3;
+			required string url = 4;
+			optional string type = 5; //@TODO list of types, if possible (undocumented)
+		}
+		message UserMention {
+			required uint64 id = 1;
+			repeated uint32 indices = 2;
+			required string name = 3;
+			required string screen_name = 4;
+		}
+		message Symbols {
+			repeated uint32 indices = 1;
+			required string text = 2;
+		}
+		repeated Hashtags hashtags = 1;
+		repeated Media media = 2;
+		repeated Url urls = 3;
+		repeated UserMention user_mentions = 4;
+		repeated Symbols symbols = 5;
+	}
+
+	// see: https://dev.twitter.com/docs/api/multiple-media-extended-entities
+	message ExtendedEntities {
+		repeated Media media = 1;
+	}
+
+	message Coordinates {
+		repeated float coordinates = 1;
+		required string type = 2;
+	}
+
+	// see: https://dev.twitter.com/docs/platform-objects/places
+	message Places {
+		message Attributes {
+			optional string street_address = 1;
+			optional string locality = 2;
+			optional string region = 3;
+			optional string iso3 = 4;
+			optional string postal_code = 5;
+			optional string phone = 6;
+			optional string twitter = 7;
+			optional string url = 8;
+// 			optional string app:id = 9;
+		}
+		// see: https://dev.twitter.com/docs/platform-objects/places#obj-boundingbox
+		message BoundindBox {
+			message FloatArray2 {
+				message FloatArray {
+					repeated float array_of_float = 1;
+				}
+				repeated FloatArray array_of_array_of_float = 1;
+			}
+			repeated FloatArray2 coordinates = 1; // Array of Array of Array of Float
+			optional string type = 2;
+		}
+		repeated Attributes attributes = 1;
+		optional BoundindBox bounding_box = 2;
+		optional string country = 3;
+		optional string country_code = 4;
+		optional string full_name = 5;
+		optional string id = 6;
+		optional string name = 7;
+		optional string place_type = 8;
+		optional string url = 9;
+		repeated string contained_within = 10; //what the mess see: http://gitlab.ccl/snippets/39
+	}
+
+	message Contributor {
+		required uint64 id = 1;
+		optional string screen_name = 2;
+	}
+
+	message Contributors {
+		repeated Contributor contributors = 1;
+	}
+
+	message SbksInterested {
+		repeated uint64 tweet = 1;
+		repeated uint64 question= 2;
+		repeated uint64 message_to_user = 3;
+		repeated uint64 question_to_user = 4;
+		repeated uint64 reply = 5;
+		repeated uint64 answer = 6;
+		repeated uint64 retweet = 7;
+		repeated uint64 mention = 8;
+		repeated uint64 message_for_me = 9;
+		repeated uint64 question_for_me = 10;
+		repeated uint64 reply_for_me = 11;
+		repeated uint64 response = 12;
+	}
+
+	message WithheldInCountries {
+		repeated string withheld_in_countries = 1;
+	}
+
+	required uint64 id = 1;
+	optional uint64 in_reply_to_status_id = 2;
+	optional uint64 in_reply_to_user_id = 3;
+	optional string in_reply_to_screen_name = 4;
+	required uint64 created_at = 5;
+	required string text = 6;
+	optional string source = 7;
+	optional bool truncated = 8;
+	optional uint64 user_id = 9;
+	// geo Object	Deprecated. Nullable. Use the "coordinates" field instead.
+	optional Coordinates coordinates = 11;
+	optional Places place = 12;
+	optional Contributors contributors = 13;
+	optional uint64 retweet_count = 14;
+	optional Entities entities = 15;
+	optional bool favorited = 16;
+	optional bool retweeted = 17;
+	optional ExtendedEntities extended_entities = 18;
+	optional bool possibly_sensitive = 19;
+	optional string scopes = 20;
+	optional bool withheld_copyright = 21;
+	optional WithheldInCountries withheld_in_countries = 22;
+	optional string withheld_scope = 23;
+	optional uint64 retweeted_user_id = 24;
+	optional uint64 retweeted_status_id = 25;
+	optional SbksInterested sbks_interested = 27;
+	required string sbks_source = 28;
+	optional uint64 sbks_updated_tms = 31;
+	repeated uint64 sbks_replied = 32; // mapped to columns sbks_replied<id_long_bytes>
+	optional uint32 sbks_reply_count = 33;
+	repeated uint64 sbks_retweeted = 34; // mapped to columns sbks_retweeted<id_long_bytes>
+	optional uint32 sbks_retweet_count = 35;
+	optional string lang = 36;
+	optional uint32 sbks_download_tms = 37;
+	optional uint32 favorite_count = 38;
+}
