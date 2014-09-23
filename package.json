@@ -11,6 +11,7 @@
   "dependencies": {
     "protobufjs": "~3.6.0",
     "microtime": "~1.0.1",
-    "node-protobuf": "~1.2.1"
+    "node-protobuf": "~1.2.1",
+    "protocol-buffers": "~2.3.6"
   }
 }

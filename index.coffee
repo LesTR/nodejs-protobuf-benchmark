@@ -3,6 +3,7 @@ Protobufjs   = require 'protobufjs'
 NodeProtobuf = require 'node-protobuf'
 data         = require 'data.json'
 microtime    = require 'microtime'
+protobuf     = require 'protocol-buffers'
 
 iterationCount = process.argv[2] or 10000
 
@@ -50,3 +51,16 @@ s = microtime.now()
 for i in [0..iterationCount]
 	tweet = builder.parse buf, "Tweet"
 console.log "Node-protobuf decode:\t#{microtime.now()-s} μs."
+
+#====================================== protocol-buffers ================================
+
+builder = protobuf fs.readFileSync "./tweet2.proto"
+
+s = microtime.now()
+for i in [0..iterationCount]
+	buf = builder.Tweet.encode data
+console.log "protocol-buffers encode:\t#{microtime.now()-s} μs."
+s = microtime.now()
+for i in [0..iterationCount]
+	tweet = builder.Tweet.decode buf
+console.log "protocol-buffers decode:\t#{microtime.now()-s} μs."

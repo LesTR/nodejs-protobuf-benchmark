@@ -4,10 +4,12 @@ Node.js protobuf libs compare.
 
 My results:
 ===========
-JSON parse:     88791 μs.<br/>
-JSON stringify: 111917 μs.<br/>
-[Protobufjs](https://www.npmjs.org/package/protobufjs) encode:      1154012 μs.<br/>
-[Protobufjs](https://www.npmjs.org/package/protobufjs) decode:      427042 μs.<br/>
-[Node-protobuf](https://www.npmjs.org/package/node-protobuf) encode:   474148 μs.<br/>
-[Node-protobuf](https://www.npmjs.org/package/node-protobuf) decode:   360930 μs.<br/>
+JSON parse:     144976 μs.<br/>
+JSON stringify: 152368 μs.<br/>
+[Protobufjs](https://www.npmjs.org/package/protobufjs) encode:      1456827 μs.<br/>
+[Protobufjs](https://www.npmjs.org/package/protobufjs) decode:      418814 μs.<br/>
+[Node-protobuf](https://www.npmjs.org/package/node-protobuf) encode:   548612 μs.<br/>
+[Node-protobuf](https://www.npmjs.org/package/node-protobuf) decode:   340724 μs.<br/>
+[protocol-buffers](https://www.npmjs.org/package/protocol-buffers) encode:   456768 μs.<br/>
+[protocol-buffers](https://www.npmjs.org/package/protocol-buffers) decode:   76421 μs.<br/>
 
