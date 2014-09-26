@@ -1,10 +1,10 @@
 {
   "name": "nodejs-protobuf-benchmark",
   "version": "0.0.0",
-  "description": "",
+  "description": "nodejs-protobuf-benchmark ========================= Node.js protobuf libs compare.",
   "main": "index.coffee",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/coffee-script/bin/coffee index.coffee"
   },
   "author": "Lukas Drbal <lukas.drbal@gmail.com>",
   "license": "MIT",
@@ -13,5 +13,14 @@
     "microtime": "~1.0.1",
     "node-protobuf": "~1.2.1",
     "protocol-buffers": "~2.3.6"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/LesTR/nodejs-protobuf-benchmark.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LesTR/nodejs-protobuf-benchmark/issues"
+  },
+  "homepage": "https://github.com/LesTR/nodejs-protobuf-benchmark"
 }

@@ -54,7 +54,7 @@ console.log "Node-protobuf decode:\t#{microtime.now()-s} μs."
 
 #====================================== protocol-buffers ================================
 
-builder = protobuf fs.readFileSync "./tweet2.proto"
+builder = protobuf fs.readFileSync "./tweet.proto"
 
 s = microtime.now()
 for i in [0..iterationCount]
